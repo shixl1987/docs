@@ -187,66 +187,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Response
-      </label>
-    
     <a href="./" title="Response" class="md-nav__link md-nav__link--active">
       Response
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#response-status-code" title="Response status Code" class="md-nav__link">
-    Response status Code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#http-status-code" title="HTTP Status code" class="md-nav__link">
-    HTTP Status code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sengled-open-api-status-code" title="Sengled Open API Status Code" class="md-nav__link">
-    Sengled Open API Status Code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#general-openapi-code-list" title="General OpenAPI code list：" class="md-nav__link">
-    General OpenAPI code list：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#device-data-object" title="Device data object" class="md-nav__link">
-    Device data object
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -280,50 +223,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#response-status-code" title="Response status Code" class="md-nav__link">
-    Response status Code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#http-status-code" title="HTTP Status code" class="md-nav__link">
-    HTTP Status code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sengled-open-api-status-code" title="Sengled Open API Status Code" class="md-nav__link">
-    Sengled Open API Status Code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#general-openapi-code-list" title="General OpenAPI code list：" class="md-nav__link">
-    General OpenAPI code list：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#device-data-object" title="Device data object" class="md-nav__link">
-    Device data object
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -336,9 +235,9 @@
                 
                 
                 <h1 id="response">RESPONSE</h1>
-<h4 id="response-status-code">Response status Code</h4>
+<p><strong>Response status Code</strong></p>
 <p>Responses from Sengled cloud will include HTTP status code and OpenAPI status code. OpenAPI status code supplements HTTP status code by providing more status details and/or more targeted error messages associated with specific product type. </p>
-<h4 id="http-status-code">HTTP Status code</h4>
+<p><strong>HTTP Status code</strong></p>
 <table>
 <thead>
 <tr>
@@ -360,6 +259,10 @@
 <td>Unauthorized. API authentication failed.</td>
 </tr>
 <tr>
+<td>403</td>
+<td>Forbidden, No valid access-token on request.</td>
+</tr>
+<tr>
 <td>404</td>
 <td>The server has not found anything matching the Request-URI.</td>
 </tr>
@@ -369,14 +272,14 @@
 </tr>
 </tbody>
 </table>
-<h4 id="sengled-open-api-status-code">Sengled Open API Status Code</h4>
+<p><strong>Sengled Open API Status Code</strong></p>
 <p>Below is status code value description.</p>
 <p>200:    Success</p>
 <p>&lt;200:   General errors</p>
 <p>>200:  Error codes for Specific Sengled product module </p>
-<p>Return status data format：</p>
+<p><strong>Return status data format</strong>：</p>
 <p>{"code":200,"message":"success"}</p>
-<h4 id="general-openapi-code-list">General OpenAPI code list：</h4>
+<p><strong>General OpenAPI code list</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -419,7 +322,7 @@
 </tr>
 </tbody>
 </table>
-<p>Openapi error code list specific for Sengled Element module：</p>
+<p><strong>Openapi error code list specific for Sengled Element module</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -444,9 +347,13 @@
 <td>20610</td>
 <td>is not paid service user</td>
 </tr>
+<tr>
+<td>20007</td>
+<td>Bulb offline</td>
+</tr>
 </tbody>
 </table>
-<h4 id="device-data-object">Device data object</h4>
+<p><strong>Device data object</strong></p>
 <p>The profile and settings of a Sengled smart device is represented as a data structure using the standard JSON format as follows.</p>
 <p>{</p>
 <p>"deviceList": [                             //bulb list</p>
@@ -465,45 +372,21 @@
 <p>​             "value": "on/off"                    //bulb power status</p>
 <p>​           },</p>
 <p>​           {</p>
-<p>​             "property": "resolution",</p>
-<p>​             "value": "360/720/1080"                    //camera resolution</p>
-<p>​           },</p>
-<p>​           {</p>
 <p>​             "property": "isOnline",</p>
 <p>​             "value": "true"                  //bulb online status </p>
-<p>​           },</p>
-<p>​           {</p>
-<p>​             "property": "microphone",</p>
-<p>​             "value": "on/off"                  //microphone is enabled? </p>
-<p>​           },</p>
-<p>​           {</p>
-<p>​             "property": "motionDetection",</p>
-<p>​             "value": "on/off"                  //motionDetection is enabled? </p>
-<p>​           },</p>
-<p>​           {</p>
-<p>​             "property": "nightVision",</p>
-<p>​             "value": "auto/off"                  //nightVision is enabled? </p>
-<p>​           },</p>
-<p>​           {</p>
-<p>​             "property": "paidServiceActive",</p>
-<p>​             "value": "true"                  //paidServiceActive is enabled? </p>
-<p>​           },</p>
-<p>​           {</p>
-<p>​             "property": "notification",</p>
-<p>​             "value": "on/off"                  //notification is enabled? </p>
 <p>​           },</p>
 <p>​           {</p>
 <p>​             "property": "startTime",             //device activation time. </p>
 <p>​             "value": "2015-11-05 08:15:30"</p>
 <p>​           }</p>
 <p>​         ],</p>
-<p>​         "product": "snap",              //product type   </p>
-<p>​         "productSubType": "",</p>
+<p>​         "product": "element",              //product type   </p>
+<p>​         "deviceType": "",</p>
 <p>​         "deviceID": "B0CE18140000007E",      //device MAC address  </p>
 <p>​       }</p>
 <p>​     ]</p>
 <p>​   }</p>
-<p><strong>Device data object parameters:</strong></p>
+<p><strong>Device data object parameters</strong>:</p>
 <table>
 <thead>
 <tr>
@@ -526,12 +409,7 @@
 <tr>
 <td>product</td>
 <td>String</td>
-<td>Product type（element, snap…）</td>
-</tr>
-<tr>
-<td>productSubType</td>
-<td>String</td>
-<td>Product subtype</td>
+<td>Product type（element…）</td>
 </tr>
 <tr>
 <td>deviceID</td>
@@ -540,7 +418,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>propertyList values：</strong></p>
+<p><strong>propertyList values</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -582,24 +460,6 @@
 <td>Wattage</td>
 </tr>
 <tr>
-<td>totalHoursPoweredOn</td>
-<td>String</td>
-<td>Element</td>
-<td>The number of hours that a device has been on.</td>
-</tr>
-<tr>
-<td>powerOnCount</td>
-<td>String</td>
-<td>Element</td>
-<td>The power on count</td>
-</tr>
-<tr>
-<td>powerConsumption</td>
-<td>String</td>
-<td>Element</td>
-<td>Total power consumption in Kwh</td>
-</tr>
-<tr>
 <td>isOnline</td>
 <td>String</td>
 <td>All</td>
@@ -612,52 +472,22 @@
 <td>UTC time at which a device is first activated.</td>
 </tr>
 <tr>
-<td>resolution</td>
-<td>String</td>
-<td>Snap</td>
-<td>Camera resolution（360/720/1080）</td>
-</tr>
-<tr>
-<td>microphone</td>
-<td>String</td>
-<td>Snap</td>
-<td>Microphone status  on／off</td>
-</tr>
-<tr>
-<td>motionDetection</td>
-<td>String</td>
-<td>Snap</td>
-<td>Is motion detection enabled? On/off</td>
-</tr>
-<tr>
-<td>nightVision</td>
-<td>String</td>
-<td>Snap</td>
-<td>Is night vision enabled? Auto/off</td>
-</tr>
-<tr>
-<td>notification</td>
-<td>String</td>
-<td>Snap</td>
-<td>Is motion notification enabled? On/Off</td>
-</tr>
-<tr>
-<td>paidServiceActive</td>
-<td>String</td>
-<td>Snap</td>
-<td>Paid service active? True/False</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>Snap</td>
-<td>Is video enabled? On/off</td>
-</tr>
-<tr>
 <td>parentDeviceID</td>
 <td>String</td>
 <td>Element</td>
 <td>Hub id</td>
+</tr>
+<tr>
+<td>deviceType</td>
+<td>String</td>
+<td>Element</td>
+<td>Sub type of element</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>String</td>
+<td>Flex</td>
+<td>The volume of speaker</td>
 </tr>
 </tbody>
 </table>
