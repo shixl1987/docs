@@ -234,25 +234,25 @@
               
                 
                 
-                <h1 id="overview">OVERVIEW</h1>
+                <h1 id="overview">Overview</h1>
 <p>This document defines a set of cloud APIs that can be used by third-party services to access and control Sengled smart lighting devices via cloud-to-cloud integration. Access to the API endpoints requires a third-party service to authenticate itself using the standard OAuth2.0 authentication mechanism. Once a third-party service has successfully obtained an access token, it will authenticate all calls to any API endpoint by including the encoded access token in the Authorization header. </p>
 <p>Please see the detail of OAuth2 process in the diagram below.</p>
-<p><img alt="img" src="file:///C:/Users/dengfei/AppData/Roaming/JisuOffice/ETemp/5156_57534952/poclip1/00/image0.png" /></p>
-<p>Here is the URL form used in Step 3.</p>
-<p>http:// openapi_url//oauth2/authorize?response_type=code&amp;client_id=testclient&amp;redirect_uri= thirdpartner_url &amp;scope=read&amp;state=example</p>
-<p>The response returned in Step 4 includes:</p>
+<p><img alt="img" src="./image4.png" /></p>
+<p><strong>Here is the URL form used in Step 3:</strong></p>
+<p>https://openapi.cloud.sengled.com/oauth2/authorize?response_type=code&amp;client_id=testclient&amp;redirect_uri= thirdpartner_url &amp;scope=read&amp;state=example</p>
+<p><strong>The response returned in Step 4 includes:</strong></p>
 <p>http://thirdpartner_url?code=b8ddea14-bad3-4181-b978-85c8ab9b9f44</p>
 <p>An example of URL form used in Step 5 and Step 6 is as follows:</p>
-<p><font color=#0099ff><strong>HTTP Request</strong></font></p>
+<p><strong><font color="#0099ff">HTTP Request</font></strong></p>
 <p><strong>Method</strong>: POST</p>
-<p><strong>URL</strong>: http:// openapi_url//oauth2/token</p>
+<p><strong>URL</strong>: https://openapi.cloud.sengled.com/oauth2/token</p>
 <p><strong>Headers</strong>: {Authorization=[Basic dGVzdGNsaWVudDoyY2M3YTBiOS0yOGEzLTQ2NGMtYTAwMC02Nzg1YTRlMTI5OWE=], Content-Type=[application/x-www-form-urlencoded]}</p>
 <p><strong>Body</strong>: {grant_type=[authorization_code], redirect_uri=[http:// thirdpartner_url], code=[0c4a4615-3ae0-499b-802d-d43474cf2dd1]}</p>
-<p><strong><font color=#0099ff>HTTP Response Headers</font></strong></p>
+<p><strong><font color="#0099ff">HTTP Response Headers</font></strong></p>
 <p><strong>Status</strong>: 200</p>
 <p><strong>Headers</strong>:{Date=[Fri, 16 Oct 2015 08:26:34 GMT], Transfer-Encoding=[chunked], Content-Type=[application/json], Server=[Apache-Coyote/1.1], Pragma=[no-cache], Cache-Control=[no-store, no-transform]}</p>
-<p><strong><font color=#0099ff>HTTP Response Body</font></strong></p>
-<p>{"scope":"read","access_token":"46f8c0ac-3ff0-4a51-8dff-cf9835398044","token_type":"bearer","expires_in":30,"refresh_token":"e6f0e895-9555-4337-a320-88162e30c4a5"}</p>
+<p><strong><font color="#0099ff">HTTP Response Body</font></strong></p>
+<p>{"access_token":"eyJhbGciOiJIUIkpXVCJ9.eyJjIjoiQVQmVCIsyODgoxOjc1OTUiLkIn0.PviXvjkSUbMvYaABFFNoSUCYU", "token_type": "bearer", "refresh_token": "eyJhcCI6IkpXVCJ9.eyJjIjoiQVQwIjoCJqdMy0wYjEyNOiJhdHRfYNgK1sdr20.OjZCFqoFaU1bAM", "expires_in": 86399, "c": "AT&amp;T", "jti": "debug-bj1:7595"}</p>
                 
                   
                 
